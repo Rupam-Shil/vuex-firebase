@@ -4,12 +4,13 @@ import { createStore } from 'vuex';
 const store = createStore({
 	state() {
 		return {
-			points: 0,
+			user: null,
 		};
 	},
 	mutations: {
-		updatePoints(state, payload) {
-			state.points += payload;
+		setUser(state, payload) {
+			state.user = payload;
+			console.log('user state changes:', state.user);
 		},
 	},
 });
