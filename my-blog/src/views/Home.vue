@@ -21,17 +21,13 @@
 
 <script setup>
 import { ref } from 'vue';
-import { useStore } from 'vuex';
+// import { useStore } from 'vuex';
 
-const store = useStore();
+// const store = useStore();
 
 const blogs = ref([
 	{ title: 'Why Coffee is Better than Tea', id: 1 },
 	{ title: '...Then I Took an Arrow in the Knee', id: 2 },
 	{ title: 'Mario vs Luigi, Ultimate Showdown', id: 3 },
 ]);
-
-//vuex
-console.log(store.state.user);
-store.commit('setUser', 'rupam');
 </script>

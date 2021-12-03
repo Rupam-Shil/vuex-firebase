@@ -13,6 +13,15 @@ const store = createStore({
 			console.log('user state changes:', state.user);
 		},
 	},
+	actions: {
+		signup({ commit }, { email, password }) {
+			console.log('signup action');
+			//async code
+			setTimeout(() => {
+				commit('setUser', { email, password });
+			}, 2000);
+		},
+	},
 });
 
 export default store;
