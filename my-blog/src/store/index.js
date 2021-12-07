@@ -5,6 +5,7 @@ import { auth } from '../firebase/config';
 import {
 	createUserWithEmailAndPassword,
 	signInWithEmailAndPassword,
+	signOut,
 } from 'firebase/auth';
 
 // Create a new store instance.
@@ -36,6 +37,10 @@ const store = createStore({
 			} else {
 				throw new Error('invalid credentials');
 			}
+		},
+		async logout({ commit }) {
+			await signOut(auth);
+			commit('setUser', null);
 		},
 	},
 });
