@@ -9,7 +9,7 @@
 					nulla et! Perferendis autem deleniti quo eum corrupti reiciendis
 					voluptatem ab ducimus?
 				</p>
-				<div class="icons">
+				<div class="icons" v-if="user">
 					<span>upvote or downvote this article: </span>
 					<span class="material-icons">thumb_up</span>
 					<span class="material-icons">thumb_down</span>
@@ -21,9 +21,13 @@
 
 <script setup>
 import { ref } from 'vue';
-// import { useStore } from 'vuex';
+import { computed } from 'vue';
 
-// const store = useStore();
+import { useStore } from 'vuex';
+
+const store = useStore();
+
+const user = computed(() => store.state.user);
 
 const blogs = ref([
 	{ title: 'Why Coffee is Better than Tea', id: 1 },
